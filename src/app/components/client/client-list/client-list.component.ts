@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { client } from 'src/app/models/client';
+import { Client } from 'src/app/models/client';
 
 @Component({
   selector: 'app-client-list',
@@ -10,7 +10,7 @@ import { client } from 'src/app/models/client';
 })
 export class ClientListComponent {
   
-  ELEMENT_DATA: client[] = [
+  ELEMENT_DATA: Client[] = [
     {
       id: 1,
       name: 'Allan Borges',
@@ -24,7 +24,7 @@ export class ClientListComponent {
   ]
 
   displayedColumns: string[] = ['id', 'name', 'nif', 'email', 'address', 'actions'];
-  dataSource = new MatTableDataSource<client>(this.ELEMENT_DATA);
+  dataSource = new MatTableDataSource<Client>(this.ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
