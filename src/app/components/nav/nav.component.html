@@ -1,1 +1,38 @@
-<p>nav works!</p>
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+      <img src="assets\img\restaurant-svgrepo-com.svg" alt="Navigation image">
+      <mat-nav-list class="nav-list">
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">home</i>
+            Home
+        </a>
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">restaurant</i>
+            Menu
+        </a>
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">account_circle</i>
+            Client
+        </a>
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">motorcycle</i>
+            Courier
+        </a>
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">mail</i>
+            Request
+        </a>
+        <a mat-list-item routerLink="/">
+            <i class="material-icons">logout</i>
+            Logout
+        </a>
+      </mat-nav-list>
+    </mat-drawer>
+  
+    <div class="sidenav-content">
+      <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  
+  </mat-drawer-container>
