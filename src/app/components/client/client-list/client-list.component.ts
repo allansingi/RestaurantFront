@@ -16,23 +16,25 @@ export class ClientListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'nif', 'email', 'address', 'actions'];
   dataSource = new MatTableDataSource<Client>(this.ELEMENT_DATA);
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   constructor(private service: ClientService) { }
 
   ngOnInit(): void {
     this.findAll();
   }
-  
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-  }
 
   findAll() {
     this.service.findAll().subscribe(response => {
-      this.ELEMENT_DATA = response
-      this.dataSource = new MatTableDataSource<Client>(response);
+      this.ELEMENT_DATA = response.resValues;
+      this.dataSource = new MatTableDataSource<Client>(response.resValues);
+      this.dataSource.paginator = this.paginator;
     })
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
