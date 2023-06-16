@@ -26,13 +26,13 @@ export class LoginComponent {
     private router: Router) { }
 
   login() {
-    this.service.authenticate(this.creds).subscribe(response => {
-      this.service.successfulLogin(response.headers.get('Authorization').substring(7));
-      this.router.navigate([''])
-    }, () => {
-      this.toast.error('User and/or password invalid');
-    }
-    )
+    this.service.authenticate(this.creds).subscribe({
+      next: response => {
+        this.service.successfulLogin(response.headers.get('Authorization').substring(7))
+        this.router.navigate([''])
+      },
+      error: () => { this.toast.error('User and/or password invalid') }
+    })
   }
 
   validateFields(): boolean {
