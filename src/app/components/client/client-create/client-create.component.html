@@ -4,43 +4,65 @@
         <img class="fullWidth" src="assets\img\reception-svgrepo-com.svg" alt="RESTaurant API">
 
         <section class="section">
-            <mat-checkbox class="margin">Admin</mat-checkbox>
-            <mat-checkbox class="margin">Client</mat-checkbox>
-            <mat-checkbox class="margin">Courier</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Admin</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Client</mat-checkbox>
+            <mat-checkbox class="margin" color="primary">Courier</mat-checkbox>
         </section>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Name</mat-label>
-            <input matInput placeholder="your full name">
+            <input
+            [formControl]="nome"
+            required
+            matInput
+            placeholder="your full name"
+            maxlength="50">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>NIF</mat-label>
-            <input matInput placeholder="Ex.. 000000000">
+            <input
+            [formControl]="nif"
+            required
+            matInput
+            placeholder="Ex.. 000000000"
+            mask="000000000">
             <mat-icon matSuffix>pin</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>E-mail</mat-label>
-            <input matInput placeholder="your e-mail">
+            <input
+            [formControl]="email"
+            required
+            matInput
+            placeholder="your e-mail">
             <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Address</mat-label>
-            <input matInput placeholder="Ex.. somebody@mail.com">
+            <input
+            [formControl]="address"
+            required
+            matInput
+            placeholder="Ex.. somebody@mail.com">
             <mat-icon matSuffix>home</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Ex.. 1234">
+            <input
+            [formControl]="password"
+            required
+            type="password"
+            matInput placeholder="Ex.. 1234">
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
-        <button class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
+        <button [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
+        <button routerLink="../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
     </form>
-    <p>by Allan Borges</p>
+    <p class="fullWidth">by Allan Borges</p>
 </div>
