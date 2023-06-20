@@ -21,3 +21,11 @@ h1 {
     text-align: center;
     margin-bottom: 2rem;
 }
+
+.edit {
+    color: rgba(98, 0, 255, 0.651);
+}
+
+.delete {
+    color: red;
+}
