@@ -38,6 +38,7 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { ClientCreateComponent } from './components/client/client-create/client-create.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
+import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { ClientUpdateComponent } from './components/client/client-update/client-
     ClientListComponent,
     LoginComponent,
     ClientCreateComponent,
-    ClientUpdateComponent
+    ClientUpdateComponent,
+    ClientDeleteComponent
   ],
   imports: [
     BrowserModule,
