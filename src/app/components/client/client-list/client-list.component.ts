@@ -1,7 +1,9 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Client } from 'src/app/models/client';
+import { ClientDataService } from 'src/app/services/client-data.service';
 import { ClientService } from 'src/app/services/client.service';
 
 @Component({
@@ -18,7 +20,10 @@ export class ClientListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private service: ClientService) { }
+  constructor(
+    private service: ClientService, 
+    private router: Router,
+    private clientDataService: ClientDataService) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -35,6 +40,11 @@ export class ClientListComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+  updateButton(client: Client) {
+    this.clientDataService.setClientData(client);
+    this.router.navigate(['clients/update']);
   }
 
 }

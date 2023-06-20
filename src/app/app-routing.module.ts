@@ -6,6 +6,7 @@ import { ClientListComponent } from './components/client/client-list/client-list
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './auth/auth.guard';
 import { ClientCreateComponent } from './components/client/client-create/client-create.component';
+import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
       {path: 'home', component: HomeComponent},
 
       {path: 'clients', component: ClientListComponent},
-      {path: 'clients/create', component: ClientCreateComponent}
+      {path: 'clients/create', component: ClientCreateComponent},
+      {path: 'clients/update', component: ClientUpdateComponent}
     ]
   }
 ];

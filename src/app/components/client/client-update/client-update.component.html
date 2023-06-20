@@ -1,6 +1,6 @@
 <div class="container mat-elevation-z8">
     <form  class="form">
-        <h1 class="fullWidth">Add Client</h1>
+        <h1 class="fullWidth">Update Client</h1>
         <img class="fullWidth" src="assets\img\reception-svgrepo-com.svg" alt="RESTaurant API">
 
         <section class="section">
@@ -71,7 +71,7 @@
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button (click)="create()" [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
+        <button (click)="update()" [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Update</button>
         <button routerLink="../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
     </form>
     <p class="fullWidth">by Allan Borges</p>
