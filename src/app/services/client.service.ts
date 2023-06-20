@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { API_CONFIG } from '../config/api.config';
 import { Observable } from 'rxjs';
 import { ResponseClient } from '../models/responseClient';
+import { Client } from '../models/client';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,10 @@ export class ClientService {
 
   findAll(): Observable<ResponseClient> {
     return this.http.get<ResponseClient>(`${API_CONFIG.baseUrl}/clientList`);
+  }
+
+  create(client: Client): Observable<ResponseClient> {
+    return this.http.post<ResponseClient>(`${API_CONFIG.baseUrl}/addClient`, client);
   }
 
 }

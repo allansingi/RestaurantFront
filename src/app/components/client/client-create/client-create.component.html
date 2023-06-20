@@ -4,15 +4,17 @@
         <img class="fullWidth" src="assets\img\reception-svgrepo-com.svg" alt="RESTaurant API">
 
         <section class="section">
-            <mat-checkbox class="margin" color="primary">Admin</mat-checkbox>
-            <mat-checkbox class="margin" color="primary">Client</mat-checkbox>
-            <mat-checkbox class="margin" color="primary">Courier</mat-checkbox>
+            <mat-checkbox (click)="addProfile(0)" class="margin" color="primary">Admin</mat-checkbox>
+            <mat-checkbox (click)="addProfile(1)" class="margin" color="primary">Client</mat-checkbox>
+            <mat-checkbox (click)="addProfile(2)" class="margin" color="primary">Courier</mat-checkbox>
         </section>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Name</mat-label>
             <input
-            [formControl]="nome"
+            [(ngModel)]="client.name"
+            name="name"
+            [formControl]="name"
             required
             matInput
             placeholder="your full name"
@@ -23,6 +25,8 @@
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>NIF</mat-label>
             <input
+            [(ngModel)]="client.nif"
+            name="nif"
             [formControl]="nif"
             required
             matInput
@@ -34,6 +38,8 @@
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>E-mail</mat-label>
             <input
+            [(ngModel)]="client.email"
+            name="email"
             [formControl]="email"
             required
             matInput
@@ -44,6 +50,8 @@
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Address</mat-label>
             <input
+            [(ngModel)]="client.address"
+            name="address"
             [formControl]="address"
             required
             matInput
@@ -54,6 +62,8 @@
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Password</mat-label>
             <input
+            [(ngModel)]="client.password"
+            name="password"
             [formControl]="password"
             required
             type="password"
@@ -61,7 +71,7 @@
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
+        <button (click)="create()" [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
         <button routerLink="../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
     </form>
     <p class="fullWidth">by Allan Borges</p>
