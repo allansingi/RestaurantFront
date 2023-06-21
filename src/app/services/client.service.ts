@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { API_CONFIG } from '../config/api.config';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { ResponseClient } from '../models/responseClient';
 import { Client } from '../models/client';
 
@@ -27,5 +27,9 @@ export class ClientService {
   update(client: Client): Observable<ResponseClient> {
     return this.http.post<ResponseClient>(`${API_CONFIG.baseUrl}/updateClient`, client);
   }
-
+  
+  delete(options: any): Observable<HttpEvent<ResponseClient>> {
+    return this.http.delete<ResponseClient>(`${API_CONFIG.baseUrl}/deleteClientById`, options);
+  }
+  
 }

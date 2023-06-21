@@ -47,4 +47,9 @@ export class ClientListComponent implements OnInit {
     this.router.navigate(['clients/update']);
   }
 
+  deleteButton(client: Client) {
+    this.clientDataService.setDeleteClientData(client);
+    this.router.navigate(['clients/delete']);
+  }
+
 }
