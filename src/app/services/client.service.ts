@@ -1,4 +1,4 @@
-import { HttpClient, HttpEvent, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { API_CONFIG } from '../config/api.config';
 import { Observable, map } from 'rxjs';

@@ -39,6 +39,10 @@ import { ClientCreateComponent } from './components/client/client-create/client-
 import { NgxMaskModule } from 'ngx-mask';
 import { ClientUpdateComponent } from './components/client/client-update/client-update.component';
 import { ClientDeleteComponent } from './components/client/client-delete/client-delete.component';
+import { CourierCreateComponent } from './components/courier/courier-create/courier-create.component';
+import { CourierListComponent } from './components/courier/courier-list/courier-list.component';
+import { CourierUpdateComponent } from './components/courier/courier-update/courier-update.component';
+import { CourierDeleteComponent } from './components/courier/courier-delete/courier-delete.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +50,15 @@ import { ClientDeleteComponent } from './components/client/client-delete/client-
     NavComponent,
     HomeComponent,
     HeaderComponent,
-    ClientListComponent,
     LoginComponent,
+    ClientListComponent,
     ClientCreateComponent,
     ClientUpdateComponent,
-    ClientDeleteComponent
+    ClientDeleteComponent,
+    CourierListComponent,
+    CourierCreateComponent,
+    CourierUpdateComponent,
+    CourierDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,66 +1,77 @@
 <div class="container mat-elevation-z8">
     <form  class="form">
-        <h1 class="fullWidth">Delete Client</h1>
+        <h1 class="fullWidth">Add Courier</h1>
         <img class="fullWidth" src="assets\img\reception-svgrepo-com.svg" alt="RESTaurant API">
 
         <section class="section">
-            <mat-checkbox [disabled]="true" class="margin" color="primary">Admin</mat-checkbox>
-            <mat-checkbox [disabled]="true" class="margin" color="primary">Client</mat-checkbox>
-            <mat-checkbox [disabled]="true" class="margin" color="primary">Courier</mat-checkbox>
+            <mat-checkbox (click)="addProfile(0)" class="margin" color="primary">Admin</mat-checkbox>
+            <mat-checkbox (click)="addProfile(1)" checked="true" class="margin" color="primary">Courier</mat-checkbox>
+            <mat-checkbox (click)="addProfile(2)" class="margin" color="primary">Courier</mat-checkbox>
         </section>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Name</mat-label>
             <input
-            [(ngModel)]="client.name"
+            [(ngModel)]="courier.name"
             name="name"
-            [disabled]="true"
-            matInput>
+            [formControl]="name"
+            required
+            matInput
+            placeholder="your full name"
+            maxlength="50">
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>NIF</mat-label>
             <input
-            [(ngModel)]="client.nif"
+            [(ngModel)]="courier.nif"
             name="nif"
-            [disabled]="true"
-            matInput>
+            [formControl]="nif"
+            required
+            matInput
+            placeholder="Ex.. 000000000"
+            mask="000000000">
             <mat-icon matSuffix>pin</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>E-mail</mat-label>
             <input
-            [(ngModel)]="client.email"
+            [(ngModel)]="courier.email"
             name="email"
-            [disabled]="true"
-            matInput>
+            [formControl]="email"
+            required
+            matInput
+            placeholder="your e-mail">
             <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Address</mat-label>
             <input
-            [(ngModel)]="client.address"
+            [(ngModel)]="courier.address"
             name="address"
-            [disabled]="true"
-            matInput>
+            [formControl]="address"
+            required
+            matInput
+            placeholder="Ex.. somebody@mail.com">
             <mat-icon matSuffix>home</mat-icon>
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Password</mat-label>
             <input
-            [(ngModel)]="client.password"
+            [(ngModel)]="courier.password"
             name="password"
-            [disabled]="true"
-            matInput
-            type="password">
+            [formControl]="password"
+            required
+            type="password"
+            matInput placeholder="Ex.. 1234">
             <mat-icon matSuffix>password</mat-icon>
         </mat-form-field>
 
-        <button (click)="delete()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Delete</button>
+        <button (click)="create()" [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Create</button>
         <button routerLink="../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
     </form>
     <p class="fullWidth">by Allan Borges</p>
