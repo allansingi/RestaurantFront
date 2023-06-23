@@ -1,0 +1,112 @@
+<div class="container mat-elevation-z8">
+    <form  class="form">
+        <h1 class="fullWidth">Update Menu</h1>
+        <img class="fullWidth" src="assets\img\reception-svgrepo-com.svg" alt="RESTaurant API">
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Name</mat-label>
+            <input
+            [(ngModel)]="menu.name"
+            name="name"
+            [formControl]="name"
+            required
+            matInput
+            placeholder="name the dish"
+            maxlength="50">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Description</mat-label>
+            <input
+            [(ngModel)]="menu.description"
+            name="description"
+            [formControl]="description"
+            required
+            matInput
+            placeholder="type a short description but deliciously">
+            <mat-icon matSuffix>description</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Price</mat-label>
+            <input
+              [(ngModel)]="menu.price"
+              name="price"
+              [formControl]="price"
+              required
+              matInput
+              placeholder="price of format 0,000.00"
+              mask="separator.2"
+              thousandSeparator=","
+              decimalMarker="."
+              min="0"
+              max="9999.99"
+              maxlength="8"
+              (blur)="formatPrice()"
+            />
+            <mat-icon matSuffix>attach_money</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Quantity</mat-label>
+            <input
+              [(ngModel)]="menu.quantity"
+              name="quantity"
+              [formControl]="quantity"
+              required
+              matInput
+              placeholder="quantity at most 2 digits"
+              mask="separator.0"
+              min="0"
+              max="99"
+              minlength="1"
+              maxlength="2"
+              (blur)="formatQuantity()"
+            />
+            <mat-icon matSuffix>pin</mat-icon>
+          </mat-form-field>
+
+          <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>ExpireDate</mat-label>
+            <input
+              [(ngModel)]="menu.expireDate"
+              name="expireDate"
+              [formControl]="expireDate"
+              required
+              matInput
+              placeholder="YYYY-MM-DD HH:mm:ss"
+              (input)="formatExpireDate()"
+            >
+            <mat-icon matSuffix>date_range</mat-icon>
+          </mat-form-field>
+
+        <mat-form-field class="fullWidth" appearance="fill">
+            <mat-label>Image</mat-label>
+            <input
+            [(ngModel)]="menu.imageUrl"
+            name="imageUrl"
+            [formControl]="imageUrl"
+            required
+            matInput
+            placeholder="enter a valid picture url">
+            <mat-icon matSuffix>perm_media</mat-icon>
+        </mat-form-field>
+
+        <section class="fullWidth" appearance="fill">
+          <mat-label class="center-label">Activate Menu ?</mat-label>
+          <mat-radio-group class="center-radio-group"
+                           [(ngModel)]="menu.active"
+                           name="active"
+                           required
+                           matInput>
+            <mat-radio-button appearance="fill" color="primary" [value]="true">Active</mat-radio-button>
+            <mat-radio-button appearance="fill" color="primary" [value]="false">Inactive</mat-radio-button>
+          </mat-radio-group>
+        </section>
+
+        <button (click)="update()" [disabled]="!validateFields()" class="fullWidth mat-elevation-z4" mat-flat-button color="primary">Update</button>
+        <button routerLink="../" class="fullWidth mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
+    </form>
+    <p class="fullWidth">by Allan Borges</p>
+</div>

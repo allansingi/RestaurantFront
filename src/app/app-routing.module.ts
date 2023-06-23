@@ -12,6 +12,10 @@ import { CourierListComponent } from './components/courier/courier-list/courier-
 import { CourierCreateComponent } from './components/courier/courier-create/courier-create.component';
 import { CourierUpdateComponent } from './components/courier/courier-update/courier-update.component';
 import { CourierDeleteComponent } from './components/courier/courier-delete/courier-delete.component';
+import { MenuListComponent } from './components/menu/menu-list/menu-list.component';
+import { MenuCreateComponent } from './components/menu/menu-create/menu-create.component';
+import { MenuUpdateComponent } from './components/menu/menu-update/menu-update.component';
+import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,7 +31,12 @@ const routes: Routes = [
       {path: 'couriers', component: CourierListComponent},
       {path: 'couriers/create', component: CourierCreateComponent},
       {path: 'couriers/update', component: CourierUpdateComponent},
-      {path: 'couriers/delete', component: CourierDeleteComponent}
+      {path: 'couriers/delete', component: CourierDeleteComponent},
+
+      {path: 'menus', component: MenuListComponent},
+      {path: 'menus/create', component: MenuCreateComponent},
+      {path: 'menus/update', component: MenuUpdateComponent},
+      {path: 'menus/delete', component: MenuDeleteComponent}
     ]
   }
 ];

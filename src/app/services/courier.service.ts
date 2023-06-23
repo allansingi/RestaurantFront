@@ -1,7 +1,7 @@
 import { HttpClient, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { API_CONFIG } from '../config/api.config';
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 import { ResponseCourier } from '../models/responseCourier';
 import { Courier } from '../models/courier';
 

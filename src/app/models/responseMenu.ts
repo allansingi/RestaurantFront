@@ -1,10 +1,10 @@
-import { Courier } from "./courier";
+import { Menu } from "./menu";
 
-export interface ResponseCourier {
+export interface ResponseMenu {
     status: string;
     sentOn: string;
     statusCode: string;
     transactionId: string;
     msg: string;
-    resValues: Courier[];
+    resValues: Menu[];
 }

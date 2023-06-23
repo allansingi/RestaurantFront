@@ -43,6 +43,10 @@ import { CourierCreateComponent } from './components/courier/courier-create/cour
 import { CourierListComponent } from './components/courier/courier-list/courier-list.component';
 import { CourierUpdateComponent } from './components/courier/courier-update/courier-update.component';
 import { CourierDeleteComponent } from './components/courier/courier-delete/courier-delete.component';
+import { MenuListComponent } from './components/menu/menu-list/menu-list.component';
+import { MenuCreateComponent } from './components/menu/menu-create/menu-create.component';
+import { MenuUpdateComponent } from './components/menu/menu-update/menu-update.component';
+import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +62,11 @@ import { CourierDeleteComponent } from './components/courier/courier-delete/cour
     CourierListComponent,
     CourierCreateComponent,
     CourierUpdateComponent,
-    CourierDeleteComponent
+    CourierDeleteComponent,
+    MenuListComponent,
+    MenuCreateComponent,
+    MenuUpdateComponent,
+    MenuDeleteComponent
   ],
   imports: [
     BrowserModule,
