@@ -1,1 +1,110 @@
-<p>request-list works!</p>
+<div class="container">
+
+    <h1>Request List</h1>
+  
+    <button class="mat-elevation-z8" mat-stroked-button color="primary">New Request</button>
+  
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+
+    <mat-radio-group color="primary">
+        <mat-radio-button>ORDER_RECEIVED</mat-radio-button>
+        <mat-radio-button>PREPARING</mat-radio-button>
+        <mat-radio-button>READY</mat-radio-button>
+        <mat-radio-button>IN_TRANSIT</mat-radio-button>
+        <mat-radio-button>DELIVERED</mat-radio-button>
+        <mat-radio-button>CANCELLED</mat-radio-button>
+    </mat-radio-group>
+  
+      <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="ELEMENT_DATA">
+        
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="clientId">
+              <th mat-header-cell *matHeaderCellDef> ClientId </th>
+              <td mat-cell *matCellDef="let element"> {{element.clientId}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="clientName">
+              <th mat-header-cell *matHeaderCellDef> Client Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.clientName}} </td>
+            </ng-container>
+        
+            <ng-container matColumnDef="deliveryAddress">
+              <th mat-header-cell *matHeaderCellDef> Delivery Address </th>
+              <td mat-cell *matCellDef="let element"> {{element.deliveryAddress}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="requestedMenuId">
+              <th mat-header-cell *matHeaderCellDef> Requested Menu Id </th>
+              <td mat-cell *matCellDef="let element"> {{element.requestedMenuId}} </td>
+            </ng-container>
+            
+            <ng-container matColumnDef="requestedMenuName">
+                <th mat-header-cell *matHeaderCellDef> Requested Menu Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.requestedMenuName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="requestedQuantity">
+                <th mat-header-cell *matHeaderCellDef> Requested Quantity </th>
+                <td mat-cell *matCellDef="let element"> {{element.requestedQuantity}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="courierId">
+                <th mat-header-cell *matHeaderCellDef> Courier Id </th>
+                <td mat-cell *matCellDef="let element"> {{element.courierId}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="courierName">
+                <th mat-header-cell *matHeaderCellDef> Courier Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.courierName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="createDate">
+                <th mat-header-cell *matHeaderCellDef> Create Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.createDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="updateDate">
+                <th mat-header-cell *matHeaderCellDef> Update Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.updateDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="deliveredDate">
+                <th mat-header-cell *matHeaderCellDef> Delivered Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.deliveredDate}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="requestStatus">
+                <th mat-header-cell *matHeaderCellDef> Request Status </th>
+                <td mat-cell *matCellDef="let element"> {{element.requestStatus}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="actions">
+              <th mat-header-cell *matHeaderCellDef> Actions </th>
+              <td mat-cell *matCellDef="let element">
+                <a routerLink="">
+                  <i class="material-icons edit">edit</i>
+                </a>
+                <a routerLink="">
+                  <i class="material-icons delete">visibility</i>
+                </a>
+              </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                         showFirstLastButtons
+                         aria-label="Select page of periodic elements">
+          </mat-paginator>
+        </div>
+  </div>

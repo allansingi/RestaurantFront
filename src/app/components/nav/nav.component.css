@@ -28,3 +28,8 @@ img {
     color: white;
     background: linear-gradient(283deg, rgba(2,0,36,1) 0%, rgba(42,59,149,0.5495448179271709) 53%, rgba(0,212,255,1) 100%);
 }
+
+mat-radio-group {
+    display: flex;
+    justify-content: space-around;
+}
