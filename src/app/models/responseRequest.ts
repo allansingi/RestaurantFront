@@ -1,6 +1,6 @@
 import { Request } from "./request";
 
-export interface ResponseCourier {
+export interface ResponseRequest {
     status: string;
     sentOn: string;
     statusCode: string;

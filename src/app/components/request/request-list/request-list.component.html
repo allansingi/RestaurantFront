@@ -10,16 +10,16 @@
     </mat-form-field>
 
     <mat-radio-group color="primary">
-        <mat-radio-button>ORDER_RECEIVED</mat-radio-button>
-        <mat-radio-button>PREPARING</mat-radio-button>
-        <mat-radio-button>READY</mat-radio-button>
-        <mat-radio-button>IN_TRANSIT</mat-radio-button>
-        <mat-radio-button>DELIVERED</mat-radio-button>
-        <mat-radio-button>CANCELLED</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(0)" value="0">ORDER_RECEIVED</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(1)" value="1">PREPARING</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(2)" value="2">READY</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(3)" value="3">IN_TRANSIT</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(4)" value="4">DELIVERED</mat-radio-button>
+        <mat-radio-button (click)="filterStatus(5)" value="5">CANCELLED</mat-radio-button>
     </mat-radio-group>
   
       <div class="mat-elevation-z8">
-          <table mat-table [dataSource]="ELEMENT_DATA">
+          <table mat-table [dataSource]="dataSource">
         
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -83,7 +83,7 @@
 
             <ng-container matColumnDef="requestStatus">
                 <th mat-header-cell *matHeaderCellDef> Request Status </th>
-                <td mat-cell *matCellDef="let element"> {{element.requestStatus}} </td>
+                <td mat-cell *matCellDef="let element"> {{decodeStatus(element.requestStatus)}} </td>
             </ng-container>
   
             <ng-container matColumnDef="actions">

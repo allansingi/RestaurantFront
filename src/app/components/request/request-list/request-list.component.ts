@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Request } from 'src/app/models/request';
+import { RequestService } from 'src/app/services/request.service';
 
 @Component({
   selector: 'app-request-list',
@@ -10,23 +11,8 @@ import { Request } from 'src/app/models/request';
 })
 export class RequestListComponent implements OnInit {
   
-  ELEMENT_DATA: Request[] = [
-    {
-      id: 1,
-            clientId: '1',
-            clientName: 'Allan Borges',
-            deliveryAddress: 'minha casa',
-            requestedMenuId: '3',
-            requestedMenuName: 'BBQ',
-            requestedQuantity: '1',
-            courierId: 6,
-            courierName: 'NOT_ASSIGNED',
-            createDate: '2023-06-23 13:10:33',
-            updateDate: '2023-06-23 13:10:33',
-            deliveredDate: '2023-06-23 13:10:33',
-            requestStatus: '0'
-    }
-  ]
+  ELEMENT_DATA: Request[] = []
+  FILTERED_DATA: Request[] = []
 
   displayedColumns: string[] = ['id', 'clientId', 'clientName', 'deliveryAddress', 'requestedMenuId', 'requestedMenuName', 'requestedQuantity', 'courierId',
   'courierName', 'createDate', 'updateDate', 'deliveredDate', 'requestStatus', 'actions'];
@@ -34,10 +20,46 @@ export class RequestListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   
-  
+  constructor(
+    private service: RequestService
+  ) { }
   
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.findAll();
+  }
+
+  findAll() {
+    this.service.findAll().subscribe(response => {
+      this.ELEMENT_DATA = response.resValues;
+      this.dataSource = new MatTableDataSource<Request>(response.resValues);
+      this.dataSource.paginator = this.paginator;
+    })
+  }
+
+  decodeStatus(status: any): string {
+    if(status == '0')
+      return 'ORDER_RECEIVED'
+    else if(status == '1')
+      return 'PREPARING'
+    else if(status == '2')
+      return 'READY'
+    else if(status == '3')
+      return 'IN_TRANSIT'
+    else if(status == '4')
+      return 'DELIVERED'
+    else
+      return 'CANCELLED'
+  }
+
+  filterStatus(status: any): void {
+    let list: Request[] = [];
+    this.ELEMENT_DATA.forEach(x => {
+      if(x.requestStatus == status)
+        list.push(x);
+    });
+    this.FILTERED_DATA = list;
+    this.dataSource = new MatTableDataSource<Request>(list);
+    this.dataSource.paginator = this.paginator;
   }
 
 
