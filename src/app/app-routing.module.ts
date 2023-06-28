@@ -17,6 +17,7 @@ import { MenuCreateComponent } from './components/menu/menu-create/menu-create.c
 import { MenuUpdateComponent } from './components/menu/menu-update/menu-update.component';
 import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.component';
 import { RequestListComponent } from './components/request/request-list/request-list.component';
+import { RequestCreateComponent } from './components/request/request-create/request-create.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
       {path: 'menus/update', component: MenuUpdateComponent},
       {path: 'menus/delete', component: MenuDeleteComponent},
 
-      {path: 'requests', component: RequestListComponent}
+      {path: 'requests', component: RequestListComponent},
+      {path: 'requests/create', component: RequestCreateComponent}
     ]
   }
 ];
