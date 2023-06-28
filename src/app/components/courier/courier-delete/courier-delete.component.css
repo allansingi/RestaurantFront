@@ -1,6 +1,6 @@
 .container {
     width: 35rem;
-    margin: auto;
+    margin: auto auto 3rem auto;
     padding: 1rem;
     border-radius: .6rem;
 }

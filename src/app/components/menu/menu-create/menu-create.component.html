@@ -17,18 +17,6 @@
         </mat-form-field>
 
         <mat-form-field class="fullWidth" appearance="fill">
-            <mat-label>Description</mat-label>
-            <input
-            [(ngModel)]="menu.description"
-            name="description"
-            [formControl]="description"
-            required
-            matInput
-            placeholder="type a short description but deliciously">
-            <mat-icon matSuffix>description</mat-icon>
-        </mat-form-field>
-
-        <mat-form-field class="fullWidth" appearance="fill">
             <mat-label>Price</mat-label>
             <input
               [(ngModel)]="menu.price"
@@ -93,6 +81,18 @@
             <mat-icon matSuffix>perm_media</mat-icon>
         </mat-form-field>
 
+        <mat-form-field class="fullWidth" appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea class="fullWidth descricao"
+            [(ngModel)]="menu.description"
+            name="description"
+            [formControl]="description"
+            required
+            matInput
+            placeholder="type a short description but deliciously">
+        </textarea>
+        </mat-form-field>
+        
         <section class="fullWidth" appearance="fill">
           <mat-label class="center-label">Activate Menu ?</mat-label>
           <mat-radio-group class="center-radio-group"
