@@ -48,6 +48,7 @@ import { MenuCreateComponent } from './components/menu/menu-create/menu-create.c
 import { MenuUpdateComponent } from './components/menu/menu-update/menu-update.component';
 import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.component';
 import { RequestListComponent } from './components/request/request-list/request-list.component';
+import { RequestCreateComponent } from './components/request/request-create/request-create.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { RequestListComponent } from './components/request/request-list/request-
     MenuCreateComponent,
     MenuUpdateComponent,
     MenuDeleteComponent,
-    RequestListComponent
+    RequestListComponent,
+    RequestCreateComponent
   ],
   imports: [
     BrowserModule,
