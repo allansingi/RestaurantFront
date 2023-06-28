@@ -40,8 +40,6 @@ export class MenuCreateComponent {
   create(): void {
     this.service.create(this.menu).subscribe({
       next: (response) => {
-        console.log(response);
-        
         if (response.status.includes('NOK')) {
           this.toast.error(response.msg, 'Create Menu')
         } else {
