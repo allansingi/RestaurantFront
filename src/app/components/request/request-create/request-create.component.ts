@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Client } from 'src/app/models/client';
 import { Menu } from 'src/app/models/menu';
 import { Request } from 'src/app/models/request';
+import { AuthService } from 'src/app/services/auth.service';
+import { ClientService } from 'src/app/services/client.service';
 import { MenuService } from 'src/app/services/menu.service';
 import { RequestService } from 'src/app/services/request.service';
 
@@ -21,6 +24,7 @@ export class RequestCreateComponent implements OnInit {
   }
 
   menus: Menu[] = []
+  selectedMenu: Menu | undefined;
 
   clientId: FormControl = new FormControl(null, [Validators.required])
   requestedMenuId: FormControl = new FormControl(null, [Validators.required])
@@ -29,12 +33,15 @@ export class RequestCreateComponent implements OnInit {
   constructor(
     private menuService: MenuService,
     private requestService: RequestService,
+    private clientService: ClientService,
+    private authService: AuthService,
     private toast: ToastrService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
     this.findAllMenus();
+    this.getClientIdFromSession();
   }
 
   create(): void {
@@ -53,7 +60,26 @@ export class RequestCreateComponent implements OnInit {
   findAllMenus(): void {
     this.menuService.findAll().subscribe(response => {
       this.menus = response.resValues;
+      this.selectedMenu = this.menus.find(menu => menu.id === this.request.requestedMenuId);
     })
+  }
+
+  getClientIdFromSession(): void {
+    const email = this.authService.getEmailFromSession();
+    if (email) {
+      const client: Client = {
+        email,
+        name: '',
+        nif: '',
+        address: '',
+        password: '',
+        profiles: [],
+        createDate: undefined
+      }; // Create a Client object with the email
+      this.clientService.findByEmail(client).subscribe(response => {
+        this.request.clientId = response.resValues[0].id;
+      });
+    }
   }
 
   formatQuantity(): void {

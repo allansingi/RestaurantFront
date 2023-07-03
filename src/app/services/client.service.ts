@@ -9,7 +9,7 @@ import { Client } from '../models/client';
   providedIn: 'root'
 })
 export class ClientService {
-
+  
   constructor(private http: HttpClient) { }
 
   findAll(): Observable<ResponseClient> {
@@ -18,6 +18,10 @@ export class ClientService {
   
   findById(client: Client): Observable<Client> {
     return this.http.post<Client>(`${API_CONFIG.baseUrl}/clientById`, client);
+  }
+
+  findByEmail(client: Client): Observable<ResponseClient> {
+    return this.http.post<ResponseClient>(`${API_CONFIG.baseUrl}/clientByEmail`, client);
   }
   
   create(client: Client): Observable<ResponseClient> {

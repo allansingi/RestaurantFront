@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Credentials } from '../models/credentials';
 import { API_CONFIG } from '../config/api.config';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Client } from '../models/client';
 
 @Injectable({
   providedIn: 'root'
@@ -34,6 +35,17 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
+  }
+
+  getEmailFromSession(): string {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decodedToken = this.jwtService.decodeToken(token);
+      if (decodedToken && decodedToken.sub) {
+        return decodedToken.sub;
+      }
+    }
+    return null;
   }
 
 }
