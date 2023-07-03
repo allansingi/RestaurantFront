@@ -43,11 +43,9 @@
             (blur)="formatQuantity()"
             placeholder="quantity at most 2 digits">
         </mat-form-field>
-
-        
       
     </form>
-<img *ngIf="selectedMenu" [src]="selectedMenu.imageUrl" alt="Menu Image">
+
     <button (click)="create()" [disabled]="!validateFields()" class="full-width mat-elevation-z4" mat-raised-button color="primary">Create</button>
     <button routerLink="../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Cancel</button>
 
