@@ -50,6 +50,7 @@ import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.c
 import { RequestListComponent } from './components/request/request-list/request-list.component';
 import { RequestCreateComponent } from './components/request/request-create/request-create.component';
 import { RequestUpdateComponent } from './components/request/request-update/request-update.component';
+import { RequestViewComponent } from './components/request/request-view/request-view.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { RequestUpdateComponent } from './components/request/request-update/requ
     MenuDeleteComponent,
     RequestListComponent,
     RequestCreateComponent,
-    RequestUpdateComponent
+    RequestUpdateComponent,
+    RequestViewComponent
   ],
   imports: [
     BrowserModule,
