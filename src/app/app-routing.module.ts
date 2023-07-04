@@ -19,6 +19,7 @@ import { MenuDeleteComponent } from './components/menu/menu-delete/menu-delete.c
 import { RequestListComponent } from './components/request/request-list/request-list.component';
 import { RequestCreateComponent } from './components/request/request-create/request-create.component';
 import { RequestUpdateComponent } from './components/request/request-update/request-update.component';
+import { RequestViewComponent } from './components/request/request-view/request-view.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -43,7 +44,8 @@ const routes: Routes = [
 
       {path: 'requests', component: RequestListComponent},
       {path: 'requests/create', component: RequestCreateComponent},
-      {path: 'requests/update', component: RequestUpdateComponent}
+      {path: 'requests/update', component: RequestUpdateComponent},
+      {path: 'requests/view', component: RequestViewComponent}
     ]
   }
 ];
