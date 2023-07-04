@@ -5,7 +5,7 @@ export interface Request {
     deliveryAddress?: string;
     requestedMenuId: string;
     requestedMenuName?: string;
-    requestedQuantity: string;
+    requestedQuantity: number;
     courierId?: any;
     courierName?: string;
     createDate?: string;

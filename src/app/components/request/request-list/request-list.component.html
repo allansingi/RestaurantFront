@@ -89,7 +89,7 @@
             <ng-container matColumnDef="actions">
               <th mat-header-cell *matHeaderCellDef> Actions </th>
               <td mat-cell *matCellDef="let element">
-                <a routerLink="update">
+                <a routerLink="" (click)="updateButton(element)">
                   <i class="material-icons edit">edit</i>
                 </a>
                 <a routerLink="">

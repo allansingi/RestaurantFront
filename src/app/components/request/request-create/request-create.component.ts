@@ -20,7 +20,7 @@ export class RequestCreateComponent implements OnInit {
   request: Request = {
     clientId: '',
     requestedMenuId: '',
-    requestedQuantity: ''
+    requestedQuantity: 0
   }
 
   menus: Menu[] = []
@@ -83,11 +83,14 @@ export class RequestCreateComponent implements OnInit {
   }
 
   formatQuantity(): void {
+    // Convert the quantity value to a string
+    const rawValue = this.request.requestedQuantity.toString();
     // Remove any non-digit characters from the quantity value
-    const rawValue = this.request.requestedQuantity.replace(/\D/g, '');
-    // Update the menu quantity with the formatted integer value
-    this.request.requestedQuantity = parseInt(rawValue, 10).toString();
+    const sanitizedValue = rawValue.replace(/\D/g, '');
+    // Update the request quantity with the formatted integer value
+    this.request.requestedQuantity = parseInt(sanitizedValue, 10);
   }
+  
   
   validateFields(): boolean {
     return this.clientId.valid && this.requestedMenuId.valid && this.requestedQuantity.valid;

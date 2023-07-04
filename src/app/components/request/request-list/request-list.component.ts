@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Request } from 'src/app/models/request';
+import { RequestDataService } from 'src/app/services/request-data.service';
 import { RequestService } from 'src/app/services/request.service';
 
 @Component({
@@ -21,7 +23,9 @@ export class RequestListComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   
   constructor(
-    private service: RequestService
+    private service: RequestService,
+    private router: Router,
+    private requestDataService: RequestDataService
   ) { }
   
   ngOnInit(): void {
@@ -51,6 +55,11 @@ export class RequestListComponent implements OnInit {
       return 'CANCELLED'
   }
 
+  updateButton(request: Request) {
+    this.requestDataService.setRequestData(request);
+    this.router.navigate(['requests/update']);
+  }
+
   filterStatus(status: any): void {
     let list: Request[] = [];
     this.ELEMENT_DATA.forEach(x => {
@@ -61,8 +70,6 @@ export class RequestListComponent implements OnInit {
     this.dataSource = new MatTableDataSource<Request>(list);
     this.dataSource.paginator = this.paginator;
   }
-
-
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

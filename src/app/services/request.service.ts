@@ -20,4 +20,8 @@ export class RequestService {
     return this.http.post<ResponseRequest>(`${API_CONFIG.baseUrl}/createRequest`, request);
   }
 
+  update(request: Request): Observable<ResponseRequest> {
+    return this.http.post<ResponseRequest>(`${API_CONFIG.baseUrl}/updateRequest`, request);
+  }
+
 }

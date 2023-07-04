@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+	 viewBox="0 0 512 512" xml:space="preserve">
+<rect x="356.075" y="456.149" style="fill:#9B4573;" width="128.094" height="48.03"/>
+<rect x="372.081" y="280.015" style="fill:#FEC986;" width="96.07" height="176.124"/>
+<rect x="27.835" y="7.821" style="fill:#C8546F;" width="320.235" height="248.179"/>
+<rect x="27.835" y="215.968" style="fill:#FEB860;" width="320.235" height="40.032"/>
+<g>
+	<path style="fill:#1D1D1B;" d="M355.888,263.821H20.014V0h335.873v263.821H355.888z M35.655,248.179h304.59V15.642H35.655V248.179z
+		"/>
+	<polygon style="fill:#1D1D1B;" points="195.772,496.358 195.772,272.012 180.13,272.012 180.13,496.358 107.893,496.358 
+		107.893,512 268.009,512 268.009,496.358 	"/>
+	<rect x="59.855" y="208.147" style="fill:#1D1D1B;" width="256.188" height="15.642"/>
+	<rect x="236.167" y="472.156" style="fill:#1D1D1B;" width="15.642" height="16.011"/>
+	<rect x="388.098" y="336.241" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="412.113" y="336.241" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="436.128" y="336.241" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="388.098" y="360.256" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="412.113" y="360.256" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="436.128" y="360.256" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="388.098" y="384.282" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="412.113" y="384.282" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="436.128" y="384.282" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+	<rect x="412.113" y="408.297" style="fill:#1D1D1B;" width="16.012" height="15.642"/>
+</g>
+<rect x="388.098" y="304.218" style="fill:#FFFFFF;" width="64.047" height="15.642"/>
+<polygon style="fill:#1D1D1B;" points="451.956,272.196 451.956,215.971 436.315,215.971 436.315,272.196 364.264,272.196 
+	364.264,440.133 379.905,440.133 379.905,287.838 460.333,287.838 460.333,440.133 475.974,440.133 475.974,272.196 "/>
+<g>
+	<rect x="372.081" y="472.343" style="fill:#FFFFFF;" width="16.011" height="15.642"/>
+	<rect x="396.107" y="472.343" style="fill:#FFFFFF;" width="16.011" height="15.642"/>
+</g>
+<path style="fill:#1D1D1B;" d="M348.252,448.324V512h143.734v-63.676H348.252z M363.893,496.358v-32.393h112.451v8.376h-56.225
+	v15.642h56.225v8.376H363.893z"/>
+</svg>
