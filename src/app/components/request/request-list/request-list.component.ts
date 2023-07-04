@@ -60,6 +60,11 @@ export class RequestListComponent implements OnInit {
     this.router.navigate(['requests/update']);
   }
 
+  viewButton(request: Request) {
+    this.requestDataService.setRequestData(request);
+    this.router.navigate(['requests/view']);
+  }
+
   filterStatus(status: any): void {
     let list: Request[] = [];
     this.ELEMENT_DATA.forEach(x => {

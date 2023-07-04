@@ -1,1 +1,67 @@
-<p>request-view works!</p>
+<div class="container mat-elevation-z8">
+    <h1 class="full-width">View Request</h1>
+    <img class="full-width" src="assets\img\television-svgrepo-com.svg" alt="Create Request Image">
+
+    <form class="form">
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>RequestID</mat-label>
+            <input
+            [(ngModel)]="request.id"
+            name="id"
+            matInput
+            readonly>
+        </mat-form-field>
+        
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>ClientID</mat-label>
+            <input
+            [(ngModel)]="request.clientId"
+            name="clientId"
+            matInput
+            readonly>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>REQUESTED MENU</mat-label>
+            <input
+            [(ngModel)]="request.requestedMenuName"
+            name="requestedMenuName"
+            matInput
+            readonly>
+          </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input
+            [(ngModel)]="request.requestedQuantity"
+            name="requestedQuantity"
+            matInput
+            readonly>
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>REQUEST STATUS</mat-label>
+            <input
+            [(ngModel)]="decodedStatus"
+            name="requestStatus"
+            matInput
+            readonly>
+        </mat-form-field>
+      
+        <mat-form-field class="full-width" appearance="outline">
+            <mat-label>ASSIGNED COURIER</mat-label>
+            <input
+            [(ngModel)]="request.courierName"
+            name="courierName"
+            matInput
+            readonly>
+        </mat-form-field>
+
+    </form>
+
+    <button routerLink="../" class="full-width mat-elevation-z4" mat-stroked-button color="warn">Return</button>
+
+    <p class="full-width">by Allan Borges</p>
+
+</div>
