@@ -5,7 +5,7 @@
 
         <img src="assets\img\safebox-svgrepo-com.svg" alt="Restaurant Delivery REST API">
 
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" appearance="outline">
           <mat-label>Email</mat-label>
           <input
           [formControl]="email"
@@ -14,9 +14,10 @@
           name="email"
           matInput
           placeholder="Ex. somebody@mail.com">
+          <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
       
-        <mat-form-field class="full-width">
+        <mat-form-field class="full-width" appearance="outline">
             <mat-label>Password</mat-label>
             <input
             [formControl]="password"
@@ -26,6 +27,7 @@
             type="password"
             matInput
             placeholder="Ex. 123">
+            <mat-icon matSuffix>password</mat-icon>
           </mat-form-field>
 
           <button (click)="login()" [disabled]="!validateFields()" class="full-width mat-elevation-z4" mat-stroked-button color="primary">Login</button>
